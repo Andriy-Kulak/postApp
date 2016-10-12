@@ -1,0 +1,53 @@
+<md-content layout-padding>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Form</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$ctrl.cancel()">
+          X
+        </md-button>
+      </div>
+    </md-toolbar>
+<form name="projectForm" ng-submit="$ctrl.submitForm($ctrl.project)">
+<div layout="row">
+  <md-input-container flex="50">
+    <label>Author</label>
+    <input required name="clientName" ng-model="$ctrl.project.userName">
+    <div ng-messages="projectForm.clientName.$error">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-input-container>
+  
+  <md-input-container flex="50">
+    <label>Email</label>
+    <input required name="userEmail"  ng-pattern="/^.+@.+\..+$/" ng-model="$ctrl.project.userEmail">
+    <div ng-messages="projectForm.userEmail.$error">
+      <div ng-message-exp="['required', 'pattern']">Valid email is required.</div>
+    </div>
+  </md-input-container>
+</div>
+
+  <md-input-container>
+    <label>Post Title</label>
+    <input required name="title" ng-model="$ctrl.project.title">
+    <div ng-messages="projectForm.title.$error">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-input-container>
+
+
+  <md-input-container class="md-block">
+    <label>Body</label>
+    <textarea required ng-model="$ctrl.project.body" name="body" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    <div ng-messages="projectForm.body.$error">
+      <div ng-message="required">This is required.</div>
+      <div ng-message="md-maxlength">150 characters max.</div>
+    </div>
+  </md-input-container>
+
+  <div>
+    <md-button class="md-raised md-primary" type="submit">Submit Post</md-button>
+  </div>
+
+</form>
+</md-content>

@@ -1,0 +1,37 @@
+Watch Count: {{$ctrl.watchCount}}
+
+
+<div layout="row">
+  <div flex="100" flex-gt-sm="66">
+
+<md-toolbar md-scroll-shrink>
+  <div class="md-toolbar-tools" layout-align="center center">Posts App</div>
+</md-toolbar>
+
+<md-content style="height: 600px;">
+
+  <section layout="row" layout-align="center center" layout-wrap>
+    <div flex="60">
+      <md-input-container md-no-float class="md-block">
+        <input ng-model="search" type="text" placeholder="Search" >
+      </md-input-container>
+    </div>
+    <div flex="30">
+      <md-button class="md-raised md-primary" ng-click="$ctrl.trigerModal($event)">Submit New</md-button>
+    </div>
+  </section>
+  
+  <md-list>
+    <md-list-item class="md-3-line" ng-repeat="x in $ctrl.postsUserList | filter: search">
+      <md-divider></md-divider>
+      <div class="md-list-item-text">
+        <h3><b><u>Title:</u> {{x.title}}</b></h3>
+        <h5><u>Author:</u> {{x.userName}} <u>Email:</u> {{x.userEmail}}</h5>
+        <p>{{x.body}}</p>
+      </div>
+    </md-list-item>
+  </md-list>
+
+</md-content>
+</div>
+</div>
