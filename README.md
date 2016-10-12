@@ -6,6 +6,6 @@
 <p>1) Clone the repo.</p>
 <p>2) 'cd' into the project</p>
 <p>3) Install server package on node so you can run the angular code with the following: 'npm install -g live-server'</p>
-<p>4) Type 'live-server' in terminal and the app should open in browser</p>
+<p>4) Type 'live-server' in terminal and the app should open in browser in http://127.0.0.1:8080/</p>
 <p></p>
 <p></p>
